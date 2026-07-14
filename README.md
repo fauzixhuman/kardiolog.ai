@@ -99,18 +99,7 @@ kardiolog.ai/
 │   ├── evaluate_model.py             # Script evaluasi model (MAcc, Sensitivity, Specificity, AUC)
 │   └── utils.py                      # Script fungsi umum yang dipakai bersama
 │
-# ── DATASET DIRECTORIES (PhysioNet/CinC Challenge 2016) ──
-│
-├── 📂 training-a/  ─┐
-├── 📂 training-b/   │  6 partisi folder dataset training dari PhysioNet 2016
-├── 📂 training-c/   │  Setiap folder berisi file rekaman (.wav) dan metadata (.hea)
-├── 📂 training-d/   │  Total: ±3.000+ rekaman suara jantung Normal & Abnormal
-├── 📂 training-e/   │
-├── 📂 training-f/  ─┘
-│
-├── 📂 validation/                    # Data hold-out khusus untuk validasi akhir model
-│                                     #   (Tidak dipakai saat training — murni untuk pengujian)
-│
+
 # ── ROOT FILES ──
 │
 ├── 📄 convert_model.py               # Script konversi format model (mis: .pkl → .json untuk XGBoost)
