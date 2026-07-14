@@ -130,7 +130,7 @@ kardiolog.ai/
 1. **Clone Repositori ini:**
 
    ```bash
-   git clone https://github.com/username-anda/kardiolog.ai.git
+   git clone https://github.com/fauzixhuman/kardiolog.ai.git
    cd kardiolog.ai
    ```
 
