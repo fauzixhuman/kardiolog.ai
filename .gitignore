@@ -1,0 +1,35 @@
+# Data files (terlalu besar untuk GitHub)
+*.wav
+!a0006 (ABNORMAl).wav
+!a0007 (NORMAL).wav
+*.dat
+*.hea
+*.zip
+training-*/
+validation/
+
+# Model files (terlalu besar, simpan di Google Drive/release)
+# Uncomment baris di bawah jika ingin EXCLUDE model dari repo:
+# models/*.h5
+# models/*.pkl
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
