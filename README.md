@@ -19,9 +19,11 @@ Metrik utama yang digunakan adalah **MAcc (Modified Accuracy)**, yaitu rata-rata
 
 | Metrik          | Skor Model Kami (Triple Ensemble) | Skor Juara 1 (Potes et al. 2016) |
 | :-------------- | :-------------------------------: | :------------------------------: |
-| **MAcc**        |           **87.84%** 🏆           |              86.02%              |
-| **Sensitivity** |              89.47%               |                -                 |
-| **Specificity** |              86.21%               |                -                 |
+| **MAcc**        |           **88.03%** 🏆           |              86.02%              |
+| **Sensitivity** |              90.23%               |                -                 |
+| **Specificity** |              85.83%               |                -                 |
+
+_(Catatan: Model kami dievaluasi menggunakan 3.240 data asli 100% tanpa augmentasi sintetis, dengan threshold optimal 0.19 berdasarkan protokol PhysioNet)._
 
 ---
 
@@ -29,9 +31,9 @@ Metrik utama yang digunakan adalah **MAcc (Modified Accuracy)**, yaitu rata-rata
 
 Kami menggunakan 3 "Otak" buatan yang mengamati data dari sudut pandang berbeda:
 
-1. **Otak 1 (CRNN - EfficientNetB0 + BiLSTM):** Mengobservasi pola visual dari gambar spektogram (_Mel-Spectrogram 2D_). Bobot: 10%.
+1. **Otak 1 (CRNN - EfficientNetB0 + BiLSTM):** Mengobservasi pola visual dari gambar spektogram (_Mel-Spectrogram 2D_). Bobot: 15%.
 2. **Otak 2 (1D-CNN):** Mendengarkan langsung pola waktu berurutan dari sinyal gelombang suara mentah. Bobot: 5%.
-3. **Otak 3 (XGBoost):** Menganalisis 33 fitur statistik matematis (MFCC, _Shannon Energy_, _Spectral Rolloff_ dll). Bobot: 85%.
+3. **Otak 3 (XGBoost):** Menganalisis 33 fitur statistik matematis (MFCC, _Shannon Energy_, _Spectral Rolloff_ dll). Bobot: 80%.
 
 Ketiga prediksi digabungkan menggunakan teknik _Soft-Voting_ dengan bobot yang dioptimasi via _Grid Search_.
 
@@ -144,6 +146,24 @@ kardiolog.ai/
    ```
 
 Aplikasi akan otomatis terbuka di browser (`localhost:8501`). Anda bisa mengunggah file `.wav` dari folder `data/raw/` untuk melihat AI melakukan prediksi secara _real-time_.
+
+---
+
+## 👨‍🏫 Panduan Pengujian
+
+Kami telah menyediakan **2 file sampel** langsung di repositori GitHub ini untuk memudahkan pengujian:
+
+1. 🔴 [`a0006 (ABNORMAl).wav`](<a0006%20(ABNORMAl).wav>) — Sampel rekaman pasien yang terdeteksi memiliki kelainan jantung.
+2. 🟢 [`a0007 (NORMAL).wav`](<a0007%20(NORMAL).wav>) — Sampel rekaman pasien dengan suara jantung sehat/normal.
+
+**Cara Melakukan Pengujian:**
+
+1. Klik salah satu tautan file `.wav` di atas (akan membuka halaman file di GitHub).
+2. Klik tombol **Download raw file** (ikon 📥 di kanan atas kotak kode) untuk menyimpan file `.wav` ke laptop Anda.
+3. Buka link website aplikasi Kardiolog.ai yang sudah di-_deploy_.
+4. Masuk ke menu **"✨ Prediksi AI"**.
+5. _Drag & Drop_ (atau klik _Browse_) file `.wav` yang baru saja Anda download ke dalam kotak unggahan.
+6. Lihat bagaimana model Triple Ensemble AI Saya melakukan analisis dan memberikan diagnosis secara _real-time_
 
 ---
 
