@@ -1,12 +1,7 @@
-# Data files (terlalu besar untuk GitHub)
-*.wav
-!a0006 (ABNORMAl).wav
-!a0007 (NORMAL).wav
-*.dat
-*.hea
-*.zip
-training-*/
-validation/
+# Data files
+# *.wav dibiarkan agar terupload untuk Streamlit Cloud
+# training-*/ dibiarkan agar terupload untuk Streamlit Cloud
+# validation/ dibiarkan agar terupload untuk Streamlit Cloud
 
 # Model files (terlalu besar, simpan di Google Drive/release)
 # Uncomment baris di bawah jika ingin EXCLUDE model dari repo:
